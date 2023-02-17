@@ -45,7 +45,8 @@
   width: 100%;
   justify-content: space-between;  
   background-color: #dfdada;
-  padding:5px;
+  align-items: flex-end;
+  padding:20px;
   border-radius: 10px;;
 }
 .taskList{
@@ -55,4 +56,24 @@
   align-items: center;
   width: 100%;
   gap:10px;
+}
+
+form{
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  gap:40px;
+  padding: 100px;
+  
+}
+
+form{
+  display: flex;
+  flex-direction: row;
+  gap:40px;
+  align-items: center
 }

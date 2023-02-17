@@ -23,7 +23,6 @@ app.get("/tasks", async (req: Request, res: Response) => {
     console.log(Task);
     const filter = {};
     const all = await Task.find(filter);
-    console.log(all);
     res.send(all);
   } catch (error) {
     throw error;
@@ -41,20 +40,11 @@ app.post(`/add`, async (req: Request, res: Response) => {
 
 app.delete(`/tasks/:id`, async (req: Request, res: Response) => {
   const value = req.params.id;
-  console.log(value);
   try {
     await Task.deleteOne({ _id: value });
   } catch (error) {
     throw error;
   }
-
-  // Task.remove(value, function (err) {
-  //   if (!err) {
-  //     console.log("deleted");
-  //   } else {
-  //     throw err;
-  //   }
-  // });
 });
 
 app.get("/", (req: Request, res: Response) => {
