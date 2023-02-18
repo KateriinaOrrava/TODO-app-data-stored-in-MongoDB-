@@ -2,7 +2,7 @@ import express from "express";
 import { Request, Response } from "express";
 import bodyparser from "body-parser";
 import cors from "cors";
-import mongoose, { connect } from "mongoose";
+import mongoose from "mongoose";
 import Task from "./Task";
 
 const app = express();
@@ -15,6 +15,7 @@ mongoose.set("strictQuery", false);
 
 mongoose.connect("mongodb://127.0.0.1:27017/tasks");
 const db = mongoose.connection;
+
 db.on("error", (error) => console.log(error));
 db.once("open", () => console.log("Connected to DB"));
 

@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
-import React, { useState } from 'react'
+import { useState } from 'react'
 import styles from '../ListOfTasks/ListOfTasks.module.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -24,8 +24,8 @@ export default function Input() {
 
     const useNewTaskData = ( )=>{
         return useMutation(addNewTaskElement);
-        
     }
+
     const { mutate } = useNewTaskData();
 
     const onSubmit = (e: { preventDefault: () => void }) => {        
